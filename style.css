@@ -174,46 +174,11 @@ header {
     display: none;
 }
 
-#products {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+.one_icon:hover {
+    cursor: pointer;
 }
 
-.product {
-    border-radius: 1vw;
-    margin: 1vh 2vw;
-    width: 25vw;
-    height: 40vh;
-    text-align: center;
-    background-image: url("icons/370.jpg");
-    background-size: 50%;
-}
-
-.product p {
-    font-size: 1.5vw;
-    color: black;
-}
-
-.product p:hover {
-    cursor: default;
-}
-
-.product button {
-    border: none;
-    color: black;
-    background-color: white;
-    border-radius: 0.5vw;
-    padding: 0.2vh 0.5vw;
-    font-size: 1.3vw;
-    margin-top: 2vh;
-}
-
-.product button:hover {
-    transition: 0.3s;
-    color: black;
-    background-color: rgb(162, 214, 65);
+#shopping_bag_block:hover {
     cursor: pointer;
 }
 
@@ -262,9 +227,29 @@ h1 {
     background-color: black;
     padding: 3vh;
     text-align: center;
+    margin-top: 10vh;
+    margin-left: 20vw;
 }   
 
 #icons_links img {
     width: 3vw;
     margin: 0 0.5vw;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 1vh 2vw;
+}
+
+footer p {
+    color: white;
+}
+
+footer #contacts a {
+    text-decoration: none;
+    color: white;
 }
