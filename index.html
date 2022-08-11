@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/popup_window.css">
     <link rel="stylesheet" href="styles/products.css">
     <link rel="stylesheet" href="styles/infoAboutBox.css">
+    <link rel="stylesheet" href="styles/productsList.css">
 </head>
 <body>
     <header>
@@ -44,19 +45,20 @@
               <div class="popup__wrapper">    
                 <div id="blablabla">
                   <form id="formm" role="form">
-                    <label>
-                        Пожалуйста введите
-                        свои данные, чтобы с вами 
-                        могли связаться
-                    </label>
-                    <label>Имя</label>
-                    <input type="text" name="nameReq">
-                    <label>Фамилия</label>
-                    <input type="text" name="lastNameReq">
-                    <label>Телефон</label>
-                    <input type="text" name="telReq">
-                    <label>Почта</label>
-                    <input type="mail" name="telReq">
+                    <p>Ваши товары</p>
+                    <div id="productsListBox">
+                        <div id="shopping_cart">
+                            <ul id="product_list">
+                            </ul>
+                            <p class="add">Добавить</p>
+                        </div>
+                        <hr>
+                        <p id="resultSum">Итог: 0₽</p>
+                    </div>
+                    <input type="text" placeholder="Имя" name="nameReq">
+                    <input type="text" placeholder="Фамилия" name="lastNameReq">
+                    <input type="text" placeholder="Номер телефона" name="telReq">
+                    <input type="mail" placeholder="Почта" name="telReq">
                     <button>Отправить</button>
                     </form>
                 </div>
@@ -159,7 +161,21 @@
                     <div class="adder_wrapper">    
                         <div id="window_block">
                             <form id="adding_form" role="form">
-                                <button id="addButton">добавить</button>
+                                <div id="box_param">
+                                    <div id="box_type">
+                                        <label for="">обычный</label>
+                                        <input id="ord_box" class="boxType" value="oridnary" type="radio" name="type_box">
+                                        <label for="">премиум</label>
+                                        <input id="prem_box" class="boxType" value="premium" type="radio" name="type_box">
+                                    </div>
+                                    <div id="box_size">
+                                        <label for="">маленький</label>
+                                        <input id="small_box" class="boxSize" value="small" type="radio" name="size_box">
+                                        <label for="">большой</label>
+                                        <input id="big_box" class="boxSize" value="big" type="radio" name="size_box">
+                                    </div>
+                                </div>
+                                <button class="addingButton" id="addButton">добавить</button>
                             </form>
                         </div>
                     </div>
@@ -177,6 +193,25 @@
                                 <button id="closeButton" class="closeInfoWindow">Закрыть</button>
                             </form>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="productsList_block">
+            <div class="productList_block_container">
+                <div id="close_ProductList_button" class="closeProductListWindow"></div>
+                <div class="productList_wrapper">    
+                    <div id="productList_block">
+                        <form id="productList_form" role="form">
+                            <div id="productList">
+                                <ul id="product_ul">
+                                    
+                                </ul>
+                                <p id="resultSum" class="totalSum">Итог: 0₽</p>
+                            </div>
+                            <button id="closeProductListButton" class="closeProductListWindow">Закрыть</button>
+                            <button id="clearList">Очистить</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -210,13 +245,12 @@
         <div id="icons_links">
             <a href="https://vk.com/club214443657"><img src="icons/VK.png" alt=""></a>
             <a href=""><img src="icons/TikTok.png" alt=""></a>
-            <a href=""><img src="icons/Telegram.png" alt=""></a>
             <a href=""><img src="icons/Zen.png" alt=""></a>
             <a href=""><img src="icons/Instagram.png" alt=""></a>
         </div>
     </footer>
-    <script src="main.js"></script>
     <script src="scripts/shoppingCart.js"></script>
+    <script src="scripts/productsList.js"></script>
     <script src="scripts/showInfoAboutBox.js"></script>
     <script src="scripts/showMakeOrderWindow.js"></script>
 </body>

@@ -12,6 +12,7 @@ const close_button = document.querySelector('#close');//кнопка, ввиде
 button.addEventListener('click', () => {
   form.classList.add('open');
   popup.classList.add('popup_open');
+  document.body.style.overflowY = 'hidden';
 });
 
 /*
@@ -20,4 +21,5 @@ button.addEventListener('click', () => {
 close_button.addEventListener('click', () => {
   form.classList.remove('open');
   popup.classList.remove('popup_open');
+  document.body.style.overflowY = 'visible'
 });
