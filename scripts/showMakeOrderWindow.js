@@ -12,6 +12,14 @@ const close_button = document.querySelector('#close');//кнопка, ввиде
 button.addEventListener('click', () => {
   form.classList.add('open');
   popup.classList.add('popup_open');
+  productList.addEventListener('click', event => {
+        if(event.target.className == 'deleteElement') {
+            event.target.parentNode.parentNode.parentNode.remove();
+            console.log(productsList.indexOf());
+            //delete productsList[event.target.parentNode.parentNode.parentNode];
+            //event.target.parentNode.parentNode.parentNode.style.display = 'none';
+        }
+    });
   document.body.style.overflowY = 'hidden';
 });
 

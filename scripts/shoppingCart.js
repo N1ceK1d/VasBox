@@ -57,7 +57,6 @@ if(localStorage.getItem('productsCount') > 0) {
 }
 
 function addProduct(image, title, price, type, size) {
-    console.log('adding complete!');
     return new Product(image, title, price, type, size);
     
 }
