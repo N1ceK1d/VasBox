@@ -10,19 +10,17 @@ const productList_block = document.querySelector('.productsList_block');
 const clearListButton = document.querySelector('#clearList');
 let totalSum = getTotalSum(getPrices(productsList));
 class Product {
-    id = 1;
     image;
     title;
     price;
-    type;
     size;
-    constructor(image, title, price, type, size) {
-        this.id += 1;
+    tshirt;
+    constructor(image, title, price, size, tshirt) {
         this.image = image;
         this.title = title;
         this.price = price;
-        this.type = type;
         this.size = size;
+        this.tshirt = tshirt;
     }
 }
 
@@ -84,14 +82,6 @@ clearListButton.addEventListener('click', () => {
     productsList = localStorage.clear();
 });
 
-function getSumFromProductList(productList) {
-    let sum = 0;
-    for(let price of productsList) {
-        sum += price.price;
-    }
-    return sum;
-}
-
 function getTotalSum(prices) {
     let sum = 0;
     for(let price of prices) {
@@ -100,8 +90,8 @@ function getTotalSum(prices) {
     return sum;
 }
 
-function addProductToList(imgUrl, title, price, type, size) {
-    //productsList.push(new Product(imgUrl, title, price, type, size));
+function addProductToList(imgUrl, title, price, size, tshirt) {
+    //productsList.push(new Product(imgUrl, title, price, size));
     let item = document.createElement('li');
     let item2 = document.createElement('li');
     item.setAttribute('class', 'prodItem');
@@ -112,8 +102,8 @@ function addProductToList(imgUrl, title, price, type, size) {
         <div class="decription">
             <p class="desc_text" id="title">${title}</p>
             <p class="desc_text" id="price">${price}₽</p>
-            <p class="desc_text" id="type">${type}</p>
             <p class="desc_text" id="size">${size}</p>
+            <p class="desc_text" id="t_shirt">${tshirt}</p>
         </div>
     <div>
     <div class="deleteElement"></div>`
@@ -123,8 +113,8 @@ function addProductToList(imgUrl, title, price, type, size) {
         <div class="decription">
             <p class="desc_text" id="title">${title}</p>
             <p class="desc_text" id="price">${price}₽</p>
-            <p class="desc_text" id="type">${type}</p>
             <p class="desc_text" id="size">${size}</p>
+            <p class="desc_text" id="t_shirt">${tshirt}</p>
         </div>
     <div>
     <div class="deleteElement"></div>`
@@ -133,6 +123,6 @@ function addProductToList(imgUrl, title, price, type, size) {
 }
 
 for (let i = 0; i < parseInt(localStorage.getItem('productsCount')); i++) {
-    addProductToList(productsList[i].image, productsList[i].title, productsList[i].price, productsList[i].type, productsList[i].size);
+    addProductToList(productsList[i].image, productsList[i].title, productsList[i].price, productsList[i].size, productsList[i].tshirt);
     setTimeout(1000);
 }

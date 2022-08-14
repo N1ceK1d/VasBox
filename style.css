@@ -227,8 +227,6 @@ h1 {
     background-color: black;
     padding: 3vh;
     text-align: center;
-    margin-top: 10vh;
-    margin-left: 20vw;
 }   
 
 #icons_links img {
@@ -238,7 +236,7 @@ h1 {
 
 footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: black;
     color: white;
     text-decoration: none;
