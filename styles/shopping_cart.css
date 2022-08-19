@@ -1,0 +1,214 @@
+@font-face {
+    font-family: "Mali";
+    src: url("../fonts/Mali/Mali-Regular.ttf");
+}
+@font-face {
+    font-family: "Comfortaa";
+    src: url("../fonts/Comfortaa/static/Comfortaa-Regular.ttf");
+}
+@font-face {
+    font-family: "Monsterrat";
+    src: url("../fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+body {
+    margin: 0;
+}
+
+#shopping_cart_block {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#shopping_cart {
+    width: 30vw;
+    height: 95vh;
+    text-align: center;
+    border-radius: 1vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Monsterrat';
+    font-size: 1.3vw;
+    padding: 1vh 1vw;
+}
+
+#product_list {
+    list-style: none;
+    border: solid 0.1vw black;
+    width: 23vw;
+    height: 50vh;
+    margin: 0 auto;
+    border-radius: 1vw;
+    padding: 1vh 2vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.item {
+    border: black solid 0.1vw;
+    margin: 0 auto;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5vh 0vw;
+    margin: 1vh 0;
+}
+
+.remove_item {
+    color: red;
+    cursor: pointer;
+    text-align: right;
+    margin: 0;
+    margin-left: 20vw;
+    width: 1vw;
+}
+
+.remove_item:hover {
+    cursor: pointer;
+}
+
+.item_block {
+    display: flex;
+    flex-direction: row;
+    padding: 1vw;
+}
+
+.item_img {
+    border: black solid 0.1vw;
+    border-radius: 1vw;
+    width: 5vw;
+    height: 10vh;
+    background-color: black;
+    margin: 0 1vw;
+}
+
+.item_info p {
+    margin: 0;
+}
+
+#shopping_cart input {
+    border: none;
+    text-align: center;
+    border-bottom: 0.2vw solid black;
+    margin: 1vh 2vw;
+    width: 15vw;
+    font-family: 'Monsterrat';
+    font-size: 1.3vw;
+}
+
+#shopping_cart button {
+    color: white;
+    background-color: black;
+    font-size: 1.2vw;
+    padding: 1vh 3vw;
+    border-radius: 1vw;
+    border: none;
+    font-family: 'Monsterrat';
+    font-size: 1.3vw;
+    width: 15vw;
+    margin: 0 auto;
+}
+
+#shopping_cart_image {
+    width: 5vw;
+    margin: 0;
+}
+
+#product_counter {
+    color: white;
+    font-family: 'Monsterrat';
+    border: none;
+    background-color: red;
+    width: 1vw;
+    border-radius: 4vw;
+    padding: 0.25vw;
+    margin: 0;
+    margin-top: -4vh;
+    position: relative;
+}
+
+#shopping_cart_icon {
+    position: fixed;
+    margin-left: 90vw;
+    margin-top: 15vh;
+    cursor: pointer;
+}
+
+#shopping_cart button:hover {
+    transition: 0.3s;
+    background-color: rgb(162, 214, 65);
+    color: black;
+}
+
+.close {
+    text-align: right;
+    color: red;
+    cursor:pointer;
+    margin: 0;
+    margin-left: 29vw;
+    width: 1vw;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+#box_type_block {
+    background: rgba(77, 77, 77, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#box_type {
+    width: 30vw;
+    height: 20vh;
+    text-align: center;
+    border-radius: 1vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Monsterrat';
+    font-size: 1.3vw;
+    padding: 1vh 1vw;
+}
+
+#box_type button {
+    color: white;
+    background-color: black;
+    font-size: 1.2vw;
+    padding: 1vh 3vw;
+    border-radius: 1vw;
+    border: none;
+    font-family: 'Monsterrat';
+    font-size: 1.3vw;
+    width: 15vw;
+    margin: 2vh auto;
+}
+
+#box_type button:hover {
+    transition: 0.3s;
+    background-color: rgb(162, 214, 65);
+    color: black;
+}

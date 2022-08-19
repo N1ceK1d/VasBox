@@ -1,101 +1,120 @@
-const products = document.querySelector('#products');
-const addButton = document.querySelector('#addButton');
-const addingForm = document.querySelector('#window_block');
-const popupAdder = document.querySelector('.adder');
-const closeWindowButton = document.querySelector('#closeWindow');
-const boxParam = document.querySelector('#adding_form > #box_param');
+const showCartBtn = document.querySelector('#shopping_cart_icon');
+const shoppingCart = document.querySelector('#shopping_cart_block');
+const close = document.querySelector('.close');
+const productList = document.querySelector('#product_list');
+const count = document.querySelector('#product_counter');
+const productsGrid = document.querySelector('#products');
+const resultSum = document.querySelector('#totalSum');
+const selectType = document.querySelector('#box_type_block');
+const boxTypeBlock = document.querySelector('#box_type');
+const addButton = document.querySelector('#box_type button');
 
-let productsList = [];
-if (localStorage.getItem('productsCount') > 0) {
-    productsList = JSON.parse(localStorage.getItem('jsonData'));
+let products = [];
+let productsCount = products.length;
+let totalSum = findTotalSum(products);
+
+products = JSON.stringify(localStorage.getItem('products'));
+count.textContent = productsCount;
+resultSum.textContent = totalSum;
+
+if (productsCount > 0) {
+    document.querySelector('#shopping_cart_icon').style.display = 'block';
+} else {
+    document.querySelector('#shopping_cart_icon').style.display = 'none';
 }
 
-products.addEventListener('click', event => {
-    if (event.target.className == 'add_to_cart') {
-
-        closeWindowButton.addEventListener('click', () => {
-            addingForm.classList.remove('open');
-            popupAdder.classList.remove('adder_open');
-        });
-
-        addingForm.classList.add('open');
-        popupAdder.classList.add('adder_open');
-        
-        let boxImage = event.target.parentNode.children[1].src;
-        let boxTitle = event.target.parentNode.children[2].children[0].textContent;
-        //let boxPrice = event.target.parentNode.children[2].children[1].textContent;
-        let boxPrice;
-        let boxSize;
-        let tshirtSize;
-
-        switch(boxTitle) {
-            case 'Стиль':
-            case 'Для милых дам':
-            case 'Дети 90-х': 
-                addTShirt();
-            break;
-        };
-
-        addingForm.addEventListener('click', event2 => {
-            if(document.querySelector('input[name="shirt"]:checked')){
-                tshirtSize = document.querySelector('input[name="shirt"]:checked').value;
-            } else {
-                tshirtSize = '-';
-            }
-            if (event2.target.className == 'addingButton') {
-                console.log(document.querySelector('input[name="shirt"]:checked'));
-                if(document.querySelector('input[name="size_box"]:checked')) {
-                    if(document.querySelector('input[name="size_box"]:checked').value == 'маленький') {
-                        boxPrice = '1999';
-                    } else if(document.querySelector('input[name="size_box"]:checked').value == 'большой') {
-                        boxPrice = '3999';
-                    }
-                    boxSize = document.querySelector('input[name="size_box"]:checked').value;
-                    productsList.push(addProduct(boxImage, boxTitle, parseInt(boxPrice.match(/\d+/)), boxSize, tshirtSize));
-                    localStorage.setItem('productsCount', productsList.length);
-                    localStorage.setItem('jsonData', JSON.stringify(productsList));
-                    console.log(tshirtSize);
-                }
-            } else {
-                return;
-            }
-        })
-     } else {
-        return;
-     }
+showCartBtn.addEventListener('click', () => {
+    shoppingCart.style.display = 'block';
+    document.body.style.overflow = 'hidden';
 });
 
-function addTShirt() {
-    let item = document.createElement('div');
-    item.setAttribute('id', 'tShirtSize');
-    item.innerHTML = `
-        <label for="">S</label>
-        <input id="s_size" class="tShirt_size" value="S" type="radio" name="shirt">
-        <label for="">M</label>
-        <input id="m_size" class="tShirt_size" value="M" type="radio" name="shirt">
-        <label for="">L</label>
-        <input id="l_size" class="tShirt_size" value="L" type="radio" name="shirt">`
-    boxParam.appendChild(item);
-}
+close.addEventListener('click', () => {
+    shoppingCart.style.display = 'none';
+    document.body.style.overflow = 'auto';
+})
 
-if(localStorage.getItem('productsCount') > 0) {
-    let one_icons = document.querySelectorAll('.one_icon');
-    for (icon of one_icons) {
-        icon.style.display = 'block';
+productList.addEventListener('click', (event) => {
+    if(event.target.className == 'remove_item') {
+        event.target.parentNode.style.display = 'none';
     }
-    let shoppingBagCounter = document.querySelector('#shopping_bag_block');
-    shoppingBagCounter.textContent = localStorage.getItem('productsCount');
-    console.log(localStorage.getItem('productsCount') + "  " + productsList.length);
+});
+
+
+
+productsGrid.addEventListener('click', (event) => {
+    if(event.target.className == 'adding_button') {
+        console.log('hi');
+        window.scrollTo(0, 0);
+        document.body.style.overflow = 'hidden';
+        selectType.style.display = 'block';
+        
+        if(event.target.parentNode.querySelector('.product_title').textContent == 'Стиль') {
+            boxTypeBlock.innerHTML = `
+            <p id="close_id" class="close">X</p>
+            <div>
+                <label for="">Обычный</label>
+                <input type="radio" name="type" value="обычный">
+                <label for="">Большой</label>
+                <input type="radio" name="type" value="большой">
+            </div>
+            <br>
+            <div>
+                <label for="">S</label>
+                <input type="radio" name="size" value="S">
+                <label for="">M</label>
+                <input type="radio" name="size" value="M">
+                <label for="">L</label>
+                <input type="radio" name="size" value="L">
+            </div>
+            <button id="add">Добавить</button>`;
+        } else {
+            boxTypeBlock.innerHTML = `
+            <p id="close_id" class="close close2">X</p>
+            <div>
+                <label for="">Обычный</label>
+                <input type="radio" name="type" value="обычный">
+                <label for="">Большой</label>
+                <input type="radio" name="type" value="большой">
+            </div>
+            <button id="add">Добавить</button>`;
+        }   
+        
+    }
+});
+
+function addProductToList(product) {
+    products.push(product);
+    localStorage.setItem('products', JSON.parse(products));
+    localStorage.setItem('count', products.length);
 }
 
-function addProduct(image, title, price, size, tshirt) {
-    return new Product(image, title, price, size, tshirt);
+function findTotalSum(list) {
+    let totalSum = 0;
+    for(let item of list) {
+        totalSum += item.price;
+    }
+    return totalSum;
 }
 
-function getPrices(prices) { //получаем массив цен
-    let pricesList = [];
-    for (price of prices) {
-        pricesList.push(parseInt(price.price));
-    } 
-    return pricesList;
+function showProductInList(ul, image, title, price, size = '-') {
+    let item = document.createElement('li');
+    item.setAttribute('class', 'item');
+    item.innerHTML = `
+    <p class="remove_item">X</p>
+    <div class="item_block">
+        <img class="item_img" src="${image}" alt="">
+        <div class="item_info">
+            <p>${title}</p>
+            <p>${price}₽</p>
+            <p>${size}</p>
+        </div>
+    </div>`;
+    ul.appendChild(item);
+}
+
+function getDataFromProduct(product) {
+    let title = product.querySelector('.product_title').textContent;
+    let image = product.querySelector('.product_image').src;
+    let price = parseInt(product.querySelector('.product_price').textContent.match(/\d+/));
+    return {image, title, price};
 }

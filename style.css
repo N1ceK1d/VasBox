@@ -1,190 +1,126 @@
-/*Шрифты для названия и заголовков*/
-@font-face {
-    font-family: "Acme";
-    src: url("fonts/TitleFonts/Acme/Acme-Regular.ttf");
-}
-@font-face {
-    font-family: "Alfa_Slab_One";
-    src: url("fonts/TitleFonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf");
-}
-@font-face {
-    font-family: "Anton";
-    src: url("fonts/TitleFonts/Anton/Anton-Regular.ttf");
-}
-@font-face {
-    font-family: "Edu_QLD_Beginner";
-    src: url("fonts/TitleFonts/Edu_QLD_Beginner/static/EduQLDBeginner-Regular.ttf");
-}
-@font-face {
-    font-family: "Fjalla_One";
-    src: url("fonts/TitleFonts/Fjalla_One/FjallaOne-Regular.ttf");
-}
-@font-face {
-    font-family: "Fredoka_One";
-    src: url("fonts/TitleFonts/Fredoka_One/FredokaOne-Regular.ttf");
-}
-@font-face {
-    font-family: "Indie_Flower";
-    src: url("fonts/TitleFonts/Indie_Flower/IndieFlower-Regular.ttf");
-}
 @font-face {
     font-family: "Mali";
-    src: url("fonts/TitleFonts/Mali/Mali-Regular.ttf");
+    src: url("fonts/Mali/Mali-Regular.ttf");
 }
-@font-face {
-    font-family: "Permanent_Marker";
-    src: url("fonts/TitleFonts/Permanent_Marker/PermanentMarker-Regular.ttf");
-}
-@font-face {
-    font-family: "Rampart_One";
-    src: url("fonts/TitleFonts/Rampart_One/RampartOne-Regular.ttf");
-}
-@font-face {
-    font-family: "Righteous";
-    src: url("fonts/TitleFonts/Righteous/Righteous-Regular.ttf");
-}
-@font-face {
-    font-family: "Russo_One";
-    src: url("fonts/TitleFonts/Russo_One/RussoOne-Regular.ttf");
-}
-@font-face {
-    font-family: "Shadows_Into_Light";
-    src: url("fonts/TitleFonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf");
-}
-@font-face {
-    font-family: "Squart_Peg";
-    src: url("fonts/TitleFonts/Square_Peg/SquarePeg-Regular.ttf");
-}
-
-/*Шрифты для названия и заголовков*/
 @font-face {
     font-family: "Comfortaa";
-    src: url("fonts/TextFonts/Comfortaa/static/Comfortaa-Regular.ttf");
-}
-@font-face {
-    font-family: "Exo2";
-    src: url("fonts/TextFonts/Exo_2/static/Exo2-Regular.ttf");
+    src: url("fonts/Comfortaa/static/Comfortaa-Regular.ttf");
 }
 @font-face {
     font-family: "Monsterrat";
-    src: url("fonts/TextFonts/Montserrat/static/Montserrat-Regular.ttf");
-}
-@font-face {
-    font-family: "Mulish";
-    src: url("fonts/TextFonts/Mulish/static/Mulish-Black.ttf");
-}
-@font-face {
-    font-family: "Nanum_Gothic";
-    src: url("fonts/TextFonts/Nanum_Gothic/NanumGothic-Regular.ttf");
-}
-@font-face {
-    font-family: "Yanone_Kaffeesatz";
-    src: url("fonts/TextFonts/Yanone_Kaffeesatz/static/YanoneKaffeesatz-Regular.ttf");
+    src: url("fonts/Montserrat/static/Montserrat-Regular.ttf");
 }
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-}
-
-#top_title {
-    color: white;
-    background-color: black;
-    text-align: center;
-    font-size: 2vw;
-}
-
-#top_title p:hover {
+body p:hover, h2:hover {
     cursor: default;
 }
 
-#header_content {
-    display: flex;
-    flex-direction: row;
+body button:hover {
+    cursor: pointer;
 }
 
-#content {
+/*Стили для секции header*/
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+#title {
+    background-color: black;
+    color: white;
+    font-size: 3vw;
+    margin: 0;
+    text-align: center;
+    padding: 2vh 2vw;
+    font-family: 'Mali';
+}
+
+#about {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+#icon_and_slogan {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
 }
 
 #logo {
-    width: 25vw;
-    margin: 5vh 5vw;
+    max-width: 25vw;
+    min-width: 20vw;
+    margin: 6vh 2vw;
 }
 
 #slogan {
     font-size: 2vw;
-    margin-top: -2vh;
-    margin-left: 5vw;
-}
-
-#slogan:hover {
-    cursor: default;
+    margin: 0 5vw;
+    width: 20vw;
+    font-family: 'Monsterrat';
 }
 
 #description {
-    width: 50vw;
-    font-size: 2.3vw;
-    margin: 10vh 5vw;
-}
-
-#description:hover {
-    cursor: default;
-}
-
-#shopping_bag {
-    width: 4vw;
-    position: fixed;
-    margin-left: 90%;
-    margin-top: 15vh;
-}
-
-#shopping_bag_block {
-    position: fixed;
-    margin-left: 90%;
-    margin-top: 20vh;
-    background-color: red;
-    color: white;
-    padding: 0.4vw;
-    width: 1.2vw;
-    height: 2.5vh;
-    text-align: center;
-    border-radius: 100%;
-    font-size: 1.3vw;
-    font-weight: 900;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-#shopping_bag_block:hover {
-    cursor: default;
-}
-
-#counter {
-    color: white;
-    background-color: red;
-    border-radius: 100%;
-}
-
-.one_icon {
-    display: none;
-}
-
-.one_icon:hover {
-    cursor: pointer;
-}
-
-#shopping_bag_block:hover {
-    cursor: pointer;
-}
-
-h1 {
-    text-align: center;
     font-size: 2vw;
+    width: 50vw;
+    padding: 5vw;
+    font-family: 'Monsterrat';
+}
+
+/*Стили для секции section*/
+section {
+    text-align: center;
+    font-family: 'Monsterrat';
+}
+
+.description_icon {
+    width: 2vw;
+    margin-left: 23vw;
+}
+
+.description_icon:hover {
+    cursor: pointer;
+}
+
+#products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    border: solid 2px black;
+    border-radius: 1vw;
+    width: 25vw;
+    height: 30vh;
+    margin: 2vw;
+    text-align: center;
+    font-size: 1.3vw;
+    font-family: 'Comfortaa';
+}
+
+.adding_button {
+    color: white;
+    background-color: black;
+    font-size: 1.2vw;
+    padding: 1vh 3vw;
+    border-radius: 1vw;
+    font-family: 'Comfortaa';
+    border: none;
+}
+
+.adding_button:hover {
+    transition: 0.3s;
+    background-color: rgb(162, 214, 65);
+    color: black;
 }
 
 #reviews {
@@ -194,10 +130,10 @@ h1 {
     justify-content: center;
 }
 
-#reviews iframe {
-    margin: 1vh 2vw;
-    color: black;
+.video {
     background-color: black;
+    border-radius: 1vw;
+    margin: 1vw;
 }
 
 #support {
@@ -205,6 +141,7 @@ h1 {
     margin: 1vh;
     padding: 0;
     font-size: 1.7vw;
+    font-family: 'Monsterrat';
 }
 
 #support img {
@@ -223,17 +160,7 @@ h1 {
     color: rgb(162, 214, 65);
 }
 
-#icons_links {
-    background-color: black;
-    padding: 3vh;
-    text-align: center;
-}   
-
-#icons_links img {
-    width: 3vw;
-    margin: 0 0.5vw;
-}
-
+/*Стили для секции footer*/
 footer {
     display: flex;
     flex-direction: column;
@@ -241,13 +168,30 @@ footer {
     color: white;
     text-decoration: none;
     padding: 1vh 2vw;
+    font-family: 'Monsterrat';
 }
 
-footer p {
-    color: white;
-}
-
-footer #contacts a {
+#contacts a {
     text-decoration: none;
     color: white;
+}
+
+.contact {
+    width: 13vw;
+}
+
+.contact:hover {
+    border-bottom: rgb(162, 214, 65) solid 0.1vw;
+    transition: 0.3s;
+}
+
+#social_networks {
+    background-color: black;
+    padding: 3vh;
+    text-align: center;
+}   
+
+#social_networks img {
+    width: 3vw;
+    margin: 0 0.5vw;
 }

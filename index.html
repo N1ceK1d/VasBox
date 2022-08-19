@@ -4,220 +4,146 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vasbox</title>
+    <title>VasBox</title>
     <link rel="icon" href="icons/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles/popup_window.css">
-    <link rel="stylesheet" href="styles/products.css">
-    <link rel="stylesheet" href="styles/infoAboutBox.css">
-    <link rel="stylesheet" href="styles/productsList.css">
+    <link rel="stylesheet" href="styles/shopping_cart.css">
 </head>
 <body>
+    <div id="shopping_cart_icon">
+        <img id="shopping_cart_image" src="icons/bag.png" alt="">
+        <p id="product_counter">3</p>
+    </div>
     <header>
-        <div id="top_title">
-            <h1>#VASBOX</h1>
-        </div>
-        <div id="header_content">
-            <div id="content">
-                <div id="logo">
-                    <img id="logo" src="icons/logo.png" alt="">
-                    <p id="slogan">
-                        Дарим подарки с улыбкой!
-                    </p>
-                </div>
-                <div id="desc_block">
-                    <p id="description">
-                        Часто при выборе подарка возникает вопрос, 
-                        что подарить человеку, у которого всё есть? Ответ есть!
-                        Наш сервис с подарками предлагает выбрать 
-                        индивидуальные боксы с уникальными подарками. 
-                        Подарок для второй половинки? Друга? Родителей? 
-                        Коллеги по работе? Всё это ты найдёшь тут.
-                        Гарантируем, что от такого подарка положительные 
-                        эмоции не заставят долго ждать!
-                    </p>
-                </div>
+        <p id="title">
+            #VasBox
+        </p>
+        <div id="about">
+            <div id="logo_and_sloagan">
+                <img id="logo" src="icons/logo.png" alt="">
+                <p id="slogan">
+                    Дарим подарки с улыбкой!
+                </p>
             </div>
-        </div>
-        <div class="popup">
-            <div class="popup__container">
-            <div id="close"></div>
-              <div class="popup__wrapper">    
-                <div id="blablabla">
-                  <form id="formm" role="form">
-                    <p>Ваши товары</p>
-                    <div id="productsListBox">
-                        <div id="shopping_cart">
-                            <ul id="product_ul2">
-                            </ul>
-                        </div>
-                        <hr>
-                        <p id="resSum">Итог: 0₽</p>
-                    </div>
-                    <input type="text" placeholder="Имя" name="nameReq">
-                    <input type="text" placeholder="Фамилия" name="lastNameReq">
-                    <input type="text" placeholder="Номер телефона" name="telReq">
-                    <input type="mail" placeholder="Почта" name="telReq">
-                    <button>Отправить</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </div>
-            <img class="one_icon" src="icons/shopping-bag_icon-icons.com_65048.png" alt="" id="shopping_bag">
-            <p class="one_icon" id="shopping_bag_block">
-                0
+            <p id="description">
+                Часто при выборе подарка возникает вопрос, 
+                что подарить человеку, у которого всё есть? Ответ есть!
+                Наш сервис с подарками предлагает выбрать 
+                индивидуальные боксы с уникальными подарками. 
+                Подарок для второй половинки? Друга? Родителей? 
+                Коллеги по работе? Всё это ты найдёшь тут.
+                Гарантируем, что от такого подарка положительные 
+                эмоции не заставят долго ждать!
             </p>
+        </div>
     </header>
     <section>
         <div id="products">
-            <div id="products">
-                <div class="product">
-                    <img class="info_box" src="icons/info_icon-icons.com_71167.png">
-                    <img class="box_img" src="icons/258500.png" alt="">
-                    <div class="info_text">
-                        <p class="box_title">Стиль</p>
-                        <p class="box_price">от 1999</p>
-                    </div>
-                <button class="add_to_cart">В корзину</button>
+            <div class="product">
+                <img class="description_icon" src="icons/info.png" alt="">
+                <img class="product_image" src="" alt="">
+                <div class="product_info">
+                    <p class="product_title">Стиль</p>
+                    <p class="produtct_price">от 1999₽</p>
                 </div>
-                <div class="product">
-                    <img class="info_box" src="icons/info_icon-icons.com_71167.png">
-                    <img class="box_img" src="icons/258500.png" alt="">
-                    <div class="info_text">
-                        <p class="box_title">Дети 90-х</p>
-                        <p class="box_price">от 1999</p>
-                    </div>
-                <button class="add_to_cart">В корзину</button>
-                </div>
-                <div class="product">
-                    <img class="info_box" src="icons/info_icon-icons.com_71167.png">
-                    <img class="box_img" src="icons/258500.png" alt="">
-                    <div class="info_text">
-                        <p class="box_title">Характер</p>
-                        <p class="box_price">от 1999</p>
-                    </div>
-                <button class="add_to_cart">В корзину</button>
-                </div>
-                <div class="product">
-                    <img class="info_box" src="icons/info_icon-icons.com_71167.png">
-                    <img class="box_img" src="icons/258500.png" alt="">
-                    <div class="info_text">
-                        <p class="box_title">Для милых дам</p>
-                        <p class="box_price">от 1999</p>
-                    </div>
-                <button class="add_to_cart">В корзину</button>
-                </div>
-                <div class="product">
-                    <img class="info_box" src="icons/info_icon-icons.com_71167.png">
-                    <img class="box_img" src="icons/258500.png" alt="">
-                    <div class="info_text">
-                        <p class="box_title">Уютный дом</p>
-                        <p class="box_price">от 1999</p>
-                    </div>
-                <button class="add_to_cart">В корзину</button>
-                </div>
-                <div class="product">
-                    <img class="info_box" src="icons/info_icon-icons.com_71167.png">
-                    <img class="box_img" src="icons/258500.png" alt="">
-                    <div class="info_text">
-                        <p class="box_title">Турист</p>
-                        <p class="box_price">от 1999</p>
-                    </div>
-                <button class="add_to_cart">В корзину</button>
-                </div>
-           </div>
-           <div class="adder">
-                <div class="adder_container">
-                    <div id="closeWindow"></div>
-                    <div class="adder_wrapper">    
-                        <div id="window_block">
-                            <form id="adding_form" role="form">
-                                <div id="box_param">
-                                    <div id="box_size">
-                                        <label for="">маленький</label>
-                                        <input id="small_box" class="boxSize" value="маленький" type="radio" name="size_box">
-                                        <label for="">большой</label>
-                                        <input id="big_box" class="boxSize" value="большой" type="radio" name="size_box">
-                                    </div>
-                                </div>
-                                <button class="addingButton" id="addButton">добавить</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <button class="adding_button" type="button">В корзину</button>
             </div>
-            <div class="info_block">
-                <div class="info_container">
-                    <div id="close_X_button" class="closeInfoWindow"></div>
-                    <div class="info_wrapper">    
-                        <div id="windowInfo_block">
-                            <form id="info_form" role="form">
-                                <p>
-                                    Текст с описанием бокса
-                                </p>
-                                <button id="closeButton" class="closeInfoWindow">Закрыть</button>
-                            </form>
-                        </div>
-                    </div>
+            <div class="product">
+                <img class="description_icon" src="icons/info.png" alt="">
+                <img class="product_image" src="" alt="">
+                <div class="product_info">
+                    <p class="product_title">Дети 90-х</p>
+                    <p class="produtct_price">от 1999₽</p>
                 </div>
+                <button class="adding_button" type="button">В корзину</button>
+            </div>
+            <div class="product">
+                <img class="description_icon" src="icons/info.png" alt="">
+                <img class="product_image" src="" alt="">
+                <div class="product_info">
+                    <p class="product_title">Характер</p>
+                    <p class="produtct_price">от 1999₽</p>
+                </div>
+                <button class="adding_button" type="button">В корзину</button>
+            </div>
+            <div class="product">
+                <img class="description_icon" src="icons/info.png" alt="">
+                <img class="product_image" src="" alt="">
+                <div class="product_info">
+                    <p class="product_title">Для милых дам</p>
+                    <p class="produtct_price">от 1999₽</p>
+                </div>
+                <button class="adding_button" type="button">В корзину</button>
+            </div>
+            <div class="product">
+                <img class="description_icon" src="icons/info.png" alt="">
+                <img class="product_image" src="" alt="">
+                <div class="product_info">
+                    <p class="product_title">Уютный дом</p>
+                    <p class="produtct_price">от 1999₽</p>
+                </div>
+                <button class="adding_button" type="button">В корзину</button>
+            </div>
+            <div class="product">
+                <img class="description_icon" src="icons/info.png" alt="">
+                <img class="product_image" src="" alt="">
+                <div class="product_info">
+                    <p class="product_title">Турист</p>
+                    <p class="produtct_price">от 1999₽</p>
+                </div>
+                <button class="adding_button" type="button">В корзину</button>
             </div>
         </div>
-        <div class="productsList_block">
-            <div class="productList_block_container">
-                <div id="close_ProductList_button" class="closeProductListWindow"></div>
-                <div class="productList_wrapper">    
-                    <div id="productList_block">
-                        <form id="productList_form" role="form">
-                            <div id="productList">
-                                <ul id="product_ul">
-                                    
-                                </ul>
-                                <p id="resultSum" class="totalSum">Итог: 0₽</p>
-                            </div>
-                            <button id="closeProductListButton" class="closeProductListWindow">Закрыть</button>
-                            <button id="clearList">Очистить</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <h2>Отзывы</h2>
+        <div id="reviews">
+            <iframe class="video" width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="video" width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="video" width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="video" width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div id="make_order_container">
-            <button id="make_order_button" class="button">Заказать</button>
-        </div>
-       <h1>Отзывы и обзоры</h1>
-       <div id="reviews">
-            <iframe width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-       <div id="support">
+        <div id="support">
             <p>
                 Остались вопросы?<br>
                 Пиши в Telegram <br>
-                <img src="icons/pngwing.com (2).png" alt=""><br>
+                <img src="icons/support_arrow.png" alt=""><br>
                 <a href="https://t.me/vasbox_bot">@VasBox</a>
            </p>
-       </div>
+        </div>
     </section>
     <footer>
         <div id="contacts">
             <h3>Контакты</h3>
-            <a href="+79080526938">Телефон: +7 (908) 052-69-38</a> 
+            <a href="+79080526938">Телефон: <div class="contact">+7 (908) 052-69-38</div></a> 
             <br>
-            <a href="vasbox@mail.ru">Почта: vasbox@mail.ru</a>
+            <a href="vasbox@mail.ru">Почта: <div class="contact">vasbox@mail.ru</div></a>
         </div>
-        <div id="icons_links">
+        <div id="social_networks">
             <a href="https://vk.com/club214443657"><img src="icons/VK.png" alt=""></a>
             <a href=""><img src="icons/TikTok.png" alt=""></a>
             <a href=""><img src="icons/Zen.png" alt=""></a>
             <a href=""><img src="icons/Instagram.png" alt=""></a>
         </div>
     </footer>
+    <div id="shopping_cart_block">
+        <div id="shopping_cart">
+            <p class="close">X</p>
+            <ul id="product_list">
+            </ul>
+            <p id="totalSum">Итог: </p>
+            <button id="clearList" type="button">Очистить</button>
+            <form action="" method="post">
+                <input type="text" name="name" id="name" placeholder="Имя"><br>
+                <input type="text" name="surname" id="surname" placeholder="Фамилия"><br>
+                <input type="phone" name="phone" id="phone" placeholder="Номер"><br>
+                <input type="mail" name="mail" id="mail" placeholder="Почта"><br>
+                <button type="submit">Заказать</button>
+            </form>
+        </div>
+    </div>
+    <div id="box_type_block">
+        <div id="box_type">
+        </div>
+    </div>
     <script src="scripts/shoppingCart.js"></script>
-    <script src="scripts/productsList.js"></script>
-    <script src="scripts/showInfoAboutBox.js"></script>
-    <script src="scripts/showMakeOrderWindow.js"></script>
 </body>
 </html>
