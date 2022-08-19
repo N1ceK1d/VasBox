@@ -88,8 +88,8 @@ body {
 .item_img {
     border: black solid 0.1vw;
     border-radius: 1vw;
-    width: 5vw;
-    height: 10vh;
+    width: 10vw;
+    height: 15vh;
     background-color: black;
     margin: 0 1vw;
 }

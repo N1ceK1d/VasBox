@@ -2,30 +2,27 @@ const showCartBtn = document.querySelector('#shopping_cart_icon');
 const shoppingCart = document.querySelector('#shopping_cart_block');
 const close = document.querySelector('.close');
 const productList = document.querySelector('#product_list');
-const count = document.querySelector('#product_counter');
-const productsGrid = document.querySelector('#products');
+const clearList = document.querySelector('#clearList');
 const resultSum = document.querySelector('#totalSum');
-const selectType = document.querySelector('#box_type_block');
-const boxTypeBlock = document.querySelector('#box_type');
-const addButton = document.querySelector('#box_type button');
 
-let products = [];
-let productsCount = products.length;
-let totalSum = findTotalSum(products);
-
-products = JSON.stringify(localStorage.getItem('products'));
-count.textContent = productsCount;
-resultSum.textContent = totalSum;
-
-if (productsCount > 0) {
-    document.querySelector('#shopping_cart_icon').style.display = 'block';
+if(products.length > 0) {
+    showCartBtn.style.display = 'block';
 } else {
-    document.querySelector('#shopping_cart_icon').style.display = 'none';
+    showCartBtn.style.display = 'none';
 }
 
 showCartBtn.addEventListener('click', () => {
+    window.scrollTo(0, 0);
     shoppingCart.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    for(let item of products) {
+        showProductInList(item.image, item.title, item.price, item.type, item.size);
+        document.querySelector('#product_counter').textContent = products.length;
+        if(products.length == 0) {
+            showCartBtn.style.display = 'none';
+        }
+    }
+    totalSum.textContent = `Итог: ${getTotalSum(products)}₽`;
 });
 
 close.addEventListener('click', () => {
@@ -35,68 +32,27 @@ close.addEventListener('click', () => {
 
 productList.addEventListener('click', (event) => {
     if(event.target.className == 'remove_item') {
+        let index = 0;
         event.target.parentNode.style.display = 'none';
+        let list = document.querySelectorAll('.item');
+        for(let item of list) {
+            if(item.style.display == 'none') {
+                products.splice(index, 1);
+                totalSum.textContent = `Итог: ${getTotalSum(products)}₽`;
+                document.querySelector('#product_counter').textContent = products.length;
+            }
+            index++;
+        }
+        console.log(products);
     }
-});
-
-
-
-productsGrid.addEventListener('click', (event) => {
-    if(event.target.className == 'adding_button') {
-        console.log('hi');
-        window.scrollTo(0, 0);
-        document.body.style.overflow = 'hidden';
-        selectType.style.display = 'block';
-        
-        if(event.target.parentNode.querySelector('.product_title').textContent == 'Стиль') {
-            boxTypeBlock.innerHTML = `
-            <p id="close_id" class="close">X</p>
-            <div>
-                <label for="">Обычный</label>
-                <input type="radio" name="type" value="обычный">
-                <label for="">Большой</label>
-                <input type="radio" name="type" value="большой">
-            </div>
-            <br>
-            <div>
-                <label for="">S</label>
-                <input type="radio" name="size" value="S">
-                <label for="">M</label>
-                <input type="radio" name="size" value="M">
-                <label for="">L</label>
-                <input type="radio" name="size" value="L">
-            </div>
-            <button id="add">Добавить</button>`;
-        } else {
-            boxTypeBlock.innerHTML = `
-            <p id="close_id" class="close close2">X</p>
-            <div>
-                <label for="">Обычный</label>
-                <input type="radio" name="type" value="обычный">
-                <label for="">Большой</label>
-                <input type="radio" name="type" value="большой">
-            </div>
-            <button id="add">Добавить</button>`;
-        }   
-        
+    if(products.length == 0) {
+        showCartBtn.style.display = 'none';
     }
-});
-
-function addProductToList(product) {
-    products.push(product);
-    localStorage.setItem('products', JSON.parse(products));
+    localStorage.setItem('products', JSON.stringify(products));
     localStorage.setItem('count', products.length);
-}
+});
 
-function findTotalSum(list) {
-    let totalSum = 0;
-    for(let item of list) {
-        totalSum += item.price;
-    }
-    return totalSum;
-}
-
-function showProductInList(ul, image, title, price, size = '-') {
+function showProductInList(image, title, price, type, size = '-') {
     let item = document.createElement('li');
     item.setAttribute('class', 'item');
     item.innerHTML = `
@@ -106,15 +62,27 @@ function showProductInList(ul, image, title, price, size = '-') {
         <div class="item_info">
             <p>${title}</p>
             <p>${price}₽</p>
+            <p>${type}</p>
             <p>${size}</p>
         </div>
     </div>`;
-    ul.appendChild(item);
-}
+    productList.appendChild(item);
+};
 
-function getDataFromProduct(product) {
-    let title = product.querySelector('.product_title').textContent;
-    let image = product.querySelector('.product_image').src;
-    let price = parseInt(product.querySelector('.product_price').textContent.match(/\d+/));
-    return {image, title, price};
+clearList.addEventListener('click', () => {
+    totalSum.textContent = `Итог: 0₽`;
+    document.querySelector('#product_counter').textContent = 0;
+    productList.innerHTML = '';
+    products = [];
+    showCartBtn.style.display = 'none';
+    localStorage.setItem('products', JSON.stringify(products));
+    localStorage.setItem('count', products.length);
+});
+
+function getTotalSum(list) {
+    let totalSum = 0;
+    for (let item of list) {
+        totalSum += item.price;
+    }
+    return totalSum;
 }

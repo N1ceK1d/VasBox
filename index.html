@@ -8,11 +8,12 @@
     <link rel="icon" href="icons/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/shopping_cart.css">
+    <link rel="stylesheet" href="styles/infoBox.css">
 </head>
 <body>
     <div id="shopping_cart_icon">
         <img id="shopping_cart_image" src="icons/bag.png" alt="">
-        <p id="product_counter">3</p>
+        <p id="product_counter">0</p>
     </div>
     <header>
         <p id="title">
@@ -129,21 +130,48 @@
             <p class="close">X</p>
             <ul id="product_list">
             </ul>
-            <p id="totalSum">Итог: </p>
+            <p id="totalSum">Итог: ₽</p>
             <button id="clearList" type="button">Очистить</button>
             <form action="" method="post">
                 <input type="text" name="name" id="name" placeholder="Имя"><br>
                 <input type="text" name="surname" id="surname" placeholder="Фамилия"><br>
                 <input type="phone" name="phone" id="phone" placeholder="Номер"><br>
                 <input type="mail" name="mail" id="mail" placeholder="Почта"><br>
-                <button type="submit">Заказать</button>
+                <button type="button">Заказать</button>
             </form>
         </div>
     </div>
     <div id="box_type_block">
         <div id="box_type">
+            <p id="close_id" class="close">X</p>
+                <div id="types">
+                    <label for="">Обычный</label>
+                    <input type="radio" name="type" value="обычный">
+                    <label for="">Большой</label>
+                    <input type="radio" name="type" value="большой">
+                </div>
+                <br>
+                <div id="sizes">
+                    <label for="">S</label>
+                    <input type="radio" name="size" value="S">
+                    <label for="">M</label>
+                    <input type="radio" name="size" value="M">
+                    <label for="">L</label>
+                    <input type="radio" name="size" value="L">
+                </div>
+                <button id="add_to_cart" type="submit">Добавить</button>
         </div>
     </div>
+    <div id="box_description_block">
+        <div id="box_description">
+            <p id="close_desc" >X</p>
+            <div id="desc_text">
+
+            </div>
+        </div>
+    </div>
+    <script src="scripts/product.js"></script>
     <script src="scripts/shoppingCart.js"></script>
+    <script src="scripts/infoBox.js"></script>
 </body>
 </html>
