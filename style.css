@@ -187,11 +187,14 @@ footer {
 
 #social_networks {
     background-color: black;
-    padding: 3vh;
-    text-align: center;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    margin-top: 16vh;
+    margin-left: calc(100vw/2.6);
 }   
 
 #social_networks img {
     width: 3vw;
-    margin: 0 0.5vw;
+    margin: 0vh 0.5vw;
 }

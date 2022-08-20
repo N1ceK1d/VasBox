@@ -176,8 +176,8 @@ body {
 }
 
 #box_type {
-    width: 30vw;
-    height: 20vh;
+    width: 35vw;
+    height: 40vh;
     text-align: center;
     border-radius: 1vw;
     position: absolute;
@@ -205,10 +205,31 @@ body {
     font-size: 1.3vw;
     width: 15vw;
     margin: 2vh auto;
+    margin-top: 4vh;
 }
 
 #box_type button:hover {
     transition: 0.3s;
     background-color: rgb(162, 214, 65);
     color: black;
+}
+
+#types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+#types div {
+    margin: 0vh 1vw;
+}
+
+#close_id {
+    margin-left: 33vw;
+}
+
+#sizes {
+    margin: 0;
 }
