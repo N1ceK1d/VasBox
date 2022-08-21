@@ -37,9 +37,11 @@ productsGrid.addEventListener('click', (event) => {
             case 'Турист':
                 document.querySelector('#sizes').style.display = 'none';
                 size = '-'
+                boxTypeBlock.style.height = '25vh';
                 break;
             default:
                 document.querySelector('#sizes').style.display = 'block';
+                boxTypeBlock.style.height = '40vh';
             break;
         };
 
