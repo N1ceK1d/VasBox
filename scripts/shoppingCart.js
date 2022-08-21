@@ -5,16 +5,9 @@ const productList = document.querySelector('#product_list');
 const clearList = document.querySelector('#clearList');
 const resultSum = document.querySelector('#totalSum');
 
-if(products.length > 0) {
-    showCartBtn.style.display = 'block';
-} else {
-    showCartBtn.style.display = 'none';
-}
-
-showCartBtn.addEventListener('click', () => {
-    window.scrollTo(0, 0);
-    shoppingCart.style.display = 'block';
-    document.body.style.overflow = 'hidden';
+if(localStorage.getItem('count') > 0) {
+    products = JSON.parse(localStorage.getItem('products'));
+    console.log(products);
     for(let item of products) {
         showProductInList(item.image, item.title, item.price, item.type, item.size);
         document.querySelector('#product_counter').textContent = products.length;
@@ -22,6 +15,20 @@ showCartBtn.addEventListener('click', () => {
             showCartBtn.style.display = 'none';
         }
     }
+    
+}
+
+if(products.length > 0 || localStorage.getItem('count') > 0) {
+    showCartBtn.style.display = 'block';
+    document.querySelector('#product_counter').textContent = parseInt(localStorage.getItem('count'));
+} else {
+    showCartBtn.style.display = 'none';
+}
+
+showCartBtn.addEventListener('click', () => {
+    shoppingCart.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
     totalSum.textContent = `Итог: ${getTotalSum(products)}₽`;
 });
 

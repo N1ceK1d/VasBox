@@ -167,8 +167,10 @@ footer {
     background-color: black;
     color: white;
     text-decoration: none;
-    padding: 1vh 2vw;
+    padding: 0.5vh 1vw;
     font-family: 'Monsterrat';
+    overflow-x: hidden;
+    height: 25vh;
 }
 
 #contacts a {
@@ -187,11 +189,9 @@ footer {
 
 #social_networks {
     background-color: black;
-    overflow: auto;
-    margin: auto;
-    position: absolute;
-    margin-top: 16vh;
-    margin-left: calc(100vw/2.6);
+    margin-top: auto;
+    text-align: center;
+    margin: -7vh auto;
 }   
 
 #social_networks img {

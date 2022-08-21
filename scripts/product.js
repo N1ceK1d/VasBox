@@ -28,7 +28,6 @@ class Product {
 
 productsGrid.addEventListener('click', (event) => {
     if(event.target.className == 'adding_button') {
-        window.scrollTo(0, 0);
         document.body.style.overflow = 'hidden';
         selectType.style.display = 'block';
         
@@ -83,6 +82,7 @@ boxTypeBlock.addEventListener('click', (event) => {
         document.querySelector('#product_counter').textContent = products.length;
         localStorage.setItem('products', JSON.stringify(products));
         localStorage.setItem('count', products.length);
+        window.location.reload ();
     } else if (event.target.id == 'close_id') {
         document.body.style.overflow = 'auto';
         selectType.style.display = 'none';
